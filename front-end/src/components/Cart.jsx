@@ -9,7 +9,6 @@ function Cart(){
         <div className="cart-container">
             {shoppingCart.map((item) => (
                 <CartItem product={item.product} quantity={item.quantity} key={`cart:${item.product.id}`}/>
-
             ))}
         </div>
     )

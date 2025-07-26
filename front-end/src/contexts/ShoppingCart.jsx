@@ -46,11 +46,39 @@ export const ShoppingCartProvider = ({children}) => {
         }
 
 
+        function addQuantity(product){
+            setShoppingCart((prev) =>
+            prev.map((item) => 
+            item.product.id === product.id ?
+            {...item, quantity: item.quantity + 1}:
+            item
+        ));
+        }
+
+        function removeQuantity(product){
+            setShoppingCart((prev) =>
+            prev.map((item) =>{
+            if(item.product.id === product.id){
+                if(item.quantity > 1){
+                    return ({...item, quantity: item.quantity - 1})
+                }
+                else{
+                    return null;
+                }
+            }
+            return item;            
+        }).filter((item) => item !== null)
+    
+    );
+        }
+
         //contains the variables and functions that components can use
         const value = {
             products,
             shoppingCart,
-            addToCart
+            addToCart,
+            addQuantity,
+            removeQuantity
         }
 
         return(
