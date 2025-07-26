@@ -1,8 +1,20 @@
 .cart-container {
     display: flex;
-    width: 100%;
+    width: 20%;
     flex-direction: column;
+    height: fit-content;
     border: 2px solid black;
     border-radius: 10px;
     margin-top: 10px;
+    padding: 10px;
+    align-items: center;
+    margin-right: 10px;
+    position: sticky;
+    top: 10px;
+    right: 10px;
+}
+
+.cart-header {
+    font-size: 1.6em;
+    text-decoration: underline;
 }

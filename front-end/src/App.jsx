@@ -7,9 +7,12 @@ import { ShoppingCartProvider } from './contexts/ShoppingCart'
 function App() {
     return(
       <div className="app-container">
+        <h1 className="site-title">Storey Stuff</h1>
         <ShoppingCartProvider>
-          <ProductList className="product-list"/>
-          <Cart classname="cart"/>
+          <div className="content-container">
+             <ProductList className="product-list"/>
+             <Cart className="cart"/>
+          </div>
         </ShoppingCartProvider>
       </div>
 

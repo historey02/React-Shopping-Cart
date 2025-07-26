@@ -21,8 +21,9 @@ function CartItem({product, quantity}){
         <div className="cart-item">
             <h2 className="cart-item-title">{title}</h2>
             <img className="cart-item-image" src={image} alt={title} />
-            <p className="cart-item-price">{price}</p>
-            <p className="cart-item-quantity"><button type="button" className="btn btn-primary remove-button"
+            <p className="cart-item-price">${price.toFixed(2)} / unit</p>
+            <p className="cart-item-subtotal">${(price * quantity).toFixed(2)} for {quantity}</p>
+            <p className="cart-item-quantity"><button type="button"     className="btn btn-primary remove-button"
             onClick={(remove)}>-</button> 
             {quantity}
             <button type="button" className="btn btn-primary add-button" 

@@ -1,14 +1,14 @@
 .app-container {
-    display: flex;
-    justify-content: space-between;
     background-color: rgb(104, 159, 142);
 }
 
-.product-list {
-    flex: 1;
+.content-container {
+    display: flex;
+
 }
 
-.cart {
-    flex: 0.4;
-    max-width: 400px;
+h1 {
+    text-align: center;
+    background-color: rgb(243, 198, 151);
+    padding-bottom: 5px;
 }

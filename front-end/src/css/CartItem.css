@@ -1,5 +1,10 @@
 .cart-item {
     width: 80%;
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: rgb(255, 255, 255);
 }
 
 .cart-item-title {
@@ -8,4 +13,16 @@
 
 .cart-item-image {
     width: 50px;
+}
+
+.cart-item-quantity {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.subtotal {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: underline;
 }

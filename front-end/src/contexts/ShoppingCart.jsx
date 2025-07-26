@@ -10,7 +10,14 @@ export const ShoppingCartProvider = ({children}) => {
     const [products, setProducts] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
-    const [shoppingCart, setShoppingCart] = useState([]);
+    const [shoppingCart, setShoppingCart] = useState(() => {
+        const stored = localStorage.getItem('shoppingCart');
+        return stored ? JSON.parse(stored) : [];
+    })
+
+    useEffect(()=>{
+        localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart))
+    }, [shoppingCart]);
 
     //Initializes products state array
     useEffect(() =>{

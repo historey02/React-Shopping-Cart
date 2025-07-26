@@ -8,13 +8,16 @@ function ProductList(){
     const {products} = useShoppingCartContext();
 
     return(
-        <div className="product-list-container">
+        <>
+            <div className="product-list-container">
             {products.map((product) => (
                 <ProductCard product={product} key={product.id}>
 
                 </ProductCard>
             ))}
-        </div>
+            </div>
+        </>
+        
     )
 }
 
