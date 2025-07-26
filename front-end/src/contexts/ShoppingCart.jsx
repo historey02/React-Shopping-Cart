@@ -12,6 +12,7 @@ export const ShoppingCartProvider = ({children}) => {
     const [loading, setLoading] = useState(true);
     const [shoppingCart, setShoppingCart] = useState([]);
 
+    //Initializes products state array
     useEffect(() =>{
             const loadProductList = async () =>{
                 try{
@@ -28,11 +29,28 @@ export const ShoppingCartProvider = ({children}) => {
                 }
             }
             loadProductList();
-        }, [])
+        }, []);
 
+        function addToCart(product){
+            setShoppingCart(prev => {
+                const inCart = prev.find(item => item.product.id === product.id);
+
+                if(inCart){
+                    return prev.map(item =>
+                        item.product.id === product.id ? {...item, quantity: item.quantity +1} : item
+                    );
+                }
+
+                return [...prev, {product, quantity: 1}];
+            });
+        }
+
+
+        //contains the variables and functions that components can use
         const value = {
             products,
-            shoppingCart
+            shoppingCart,
+            addToCart
         }
 
         return(

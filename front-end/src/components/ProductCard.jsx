@@ -1,7 +1,13 @@
 import '../css/ProductCard.css'
+import { useShoppingCartContext } from '../contexts/ShoppingCart';
 
 function ProductCard({product}){
     const {id, title, price, description, category, image} = product;
+    const {addToCart} = useShoppingCartContext();
+
+    function addToCartClick(){
+        addToCart(product);
+    }
 
     return(
         <div className="product-card">
@@ -10,7 +16,7 @@ function ProductCard({product}){
             <p className="product-card-price">{price}</p>
             <p className="product-card-description">{description}</p>
             <p className="product-card-category">{category}</p>
-            
+            <button type="button" className="btn btn-primary" onClick={addToCartClick}>Add To Cart</button>
         </div>
     )
 }
